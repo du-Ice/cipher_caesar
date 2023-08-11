@@ -1,18 +1,22 @@
 #!/usr/bin/env python
-
 import string
 
 # Definindo o alfabeto
 alfabeto = string.ascii_lowercase
 
 # Imprimindo um cabeçalho decorativo
-print('\n========================================================\n\
-================CIPHER CAESAR by du_Ice=================\n\
+print('\n\
+========================================================\n\
+========================================================\n\
+==============                           ===============\n\
+==============  CIPHER CAESAR by du_Ice  ===============\n\
+==============                           ===============\n\
+========================================================\n\
 ========================================================\n')
 # Loop principal
 while True:
     
-    # Loop principal que permite ao usuário escolher a operação
+    # Loop que permite ao usuário escolher a operação
     try:
         # Solicitando ao usuário que escolha entre criptografar, descriptografar ou sair
         choice = input('[E]ncrypt [D]ecrypt [Q]uit: ').lower()
@@ -70,14 +74,16 @@ while True:
         
         # Se o usuário escolher 'Q' (sair)
         elif 'q' == choice:
-            print('\n===========================\n\
+            print('\n\
+===========================\n\
 Obrigado e até a próxima...\n\
 ===========================\n')
             break
         
         # Se o usuário inserir uma opção inválida
         else:
-            print('\n=======================================\n\
+            print('\n\
+=======================================\n\
 Fora do padrão, escolha uma das opções!\n\
 =======================================\n')
 
@@ -86,4 +92,4 @@ Fora do padrão, escolha uma das opções!\n\
     except UnboundLocalError:
         print('\nPreencha todos os campos\n')
     except IndexError:
-        print('\nDeslocamento fora do alcance escolha no maximo 30\n')
+        print('\nDeslocamento fora do alcance **maximo 30**\n')
