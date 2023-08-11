@@ -86,4 +86,4 @@ Fora do padrão, escolha uma das opções!\n\
     except UnboundLocalError:
         print('\nPreencha todos os campos\n')
     except IndexError:
-        print('\nDeslocamento fora do alcance escolha no maximo 34\n')
+        print('\nDeslocamento fora do alcance escolha no maximo 30\n')
