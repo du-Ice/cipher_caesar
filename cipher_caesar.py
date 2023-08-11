@@ -9,20 +9,22 @@ alfabeto = string.ascii_lowercase
 print('\n========================================================\n\
 ================CIPHER CAESAR by du_Ice=================\n\
 ========================================================\n')
-try:
+# Loop principal
+while True:
+    
     # Loop principal que permite ao usuário escolher a operação
-    while True:
+    try:
         # Solicitando ao usuário que escolha entre criptografar, descriptografar ou sair
         choice = input('[E]ncrypt [D]ecrypt [Q]uit: ').lower()
 
         # Se o usuário escolher 'E' (criptografar)
-        if 'e' in choice:
+        if 'e' == choice:
             # Solicitando o texto a ser codificado
             enc = input('\nDigite para codificar: ').lower()
-
+        
             # Solicitando o deslocamento desejado
             shift = int(input('Qual o deslocamento desejado? '))
-
+        
             # Definindo a função para codificar usando a Cifra de César
             def cod_cesar():
                 unicoded = []
@@ -39,15 +41,15 @@ try:
 
             # Imprimindo o resultado da codificação
             print(f'\nencrypt: {cod_cesar()}\n')
-
+                
         # Se o usuário escolher 'D' (descriptografar)
-        elif 'd' in choice:
+        elif 'd' == choice:
             # Solicitando o texto a ser decodificado
             dec = input('\nDigite para decodificar: ').lower()
 
             # Solicitando o deslocamento desejado
             shift = int(input('Qual o deslocamento desejado? '))
-
+        
             # Definindo a função para decodificar usando a Cifra de César
             def decod_cesar():
                 unicoded = []
@@ -64,23 +66,24 @@ try:
 
             # Imprimindo o resultado da decodificação
             print(f'\ndecrypt: {decod_cesar()}\n')
-            continue
+            
         
         # Se o usuário escolher 'Q' (sair)
-        elif 'q' in choice:
+        elif 'q' == choice:
             print('\n===========================\n\
-    Obrigado e até a próxima...\n\
-    ===========================\n')
+Obrigado e até a próxima...\n\
+===========================\n')
             break
         
         # Se o usuário inserir uma opção inválida
         else:
             print('\n=======================================\n\
-    Fora do padrão, escolha uma das opções!\n\
-    =======================================\n')
+Fora do padrão, escolha uma das opções!\n\
+=======================================\n')
 
-except ValueError:
-    print('\nValores incompativeis, com os solicitados. Tente novamente')
-    
-except UnboundLocalError:
-    print('\nInsira o texto para criptografar ou descriptograda. Tente novamente')
+    except ValueError:
+        print('\nValores não permitido\n')
+    except UnboundLocalError:
+        print('\nPreencha todos os campos\n')
+    except IndexError:
+        print('\nDeslocamento fora do alcance escolha no maximo 34\n')
